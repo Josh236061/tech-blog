@@ -1,4 +1,4 @@
-# techblog
+# Tech Blog
 Rice Bootcamp Challenge Assignment 14: Tech Blog
 
 ## Introduction
@@ -57,4 +57,4 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 ## URLs
 
-GitHub Repo URL:
+GitHub Repo URL: https://github.com/Josh236061/techblog
