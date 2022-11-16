@@ -1,0 +1,16 @@
+[
+    {"comment":"Great Info",
+    "post_id":1,
+    "user_id":3
+   },
+   {"comment":"Thanks for the article",
+    "post_id":2,
+    "user_id":2
+   },
+   {
+    "comment":"Simple way of explaining the topic",
+    "post_id":2,
+    "user_id":3
+   }
+
+]
