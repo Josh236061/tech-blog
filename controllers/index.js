@@ -10,7 +10,8 @@ router.get("/", async (req, res) => {
   res.redirect("/home");
 });
 
-//LOGIN ROUTE
+/* Login */
+
 router.get("/login", async (req, res) => {
   if (req.session.logged_in) {
     res.render("home", {
@@ -22,7 +23,7 @@ router.get("/login", async (req, res) => {
   }
 });
 
-//SIGN UP ROUTE
+/* Sign Up */
 
 router.get("/signup", async (req, res) => {
   if (req.session.logged_in) {
@@ -35,13 +36,13 @@ router.get("/signup", async (req, res) => {
   }
 });
 
-//LOGOUT ROUTE
+/* Logout */
 
 router.get("/logout", async (req, res) => {
   res.render("home", { logged_in: req.session.logged_in });
 });
 
-//HOME ROUTE
+/* Home */
 
 router.get("/home", async (req, res) => {
   try {
@@ -80,7 +81,7 @@ router.get("/home", async (req, res) => {
   }
 });
 
-//POST ROUTE
+/* Post */
 
 router.get("/post", async (req, res) => {
   console.log("Entered /post");
@@ -131,7 +132,9 @@ router.get("/post", async (req, res) => {
   }
 });
 
-//Individual POST  ROUTE
+/* Individual Post */
+
+
 router.get("/post/:postId", async (req, res) => {
   if (!req.session.logged_in) {
     res.render("login", { logged_in: req.session.logged_in });
@@ -189,7 +192,8 @@ router.get("/post/:postId", async (req, res) => {
   }
 });
 
-//DASHBOARD ROUTE
+/* Dashboard */
+
 
 router.get("/dashboard", async (req, res) => {
   console.log(req.session.logged_in);
@@ -223,14 +227,14 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
-//NEW POST 
+/* New */
 
 router.get("/newpost", async (req, res) => {
   res.render("newpost", { logged_in: req.session.logged_in });
 });
 
 
-//EDIT/UPDATE POST ROUTE
+/* Edit - Update */
 
 router.get("/edit/:postId", async (req, res) => {
 
@@ -250,31 +254,32 @@ router.get("/edit/:postId", async (req, res) => {
 
 
 
-//DELETE POST
+/* DELETE POST */
 
-// router.get("/delete/:postId", async (req, res) => {
-
-
-//   // const username=req.session.username;
-
-//   console.log("Post id and User id",req.params.postId);
-
-//   const postData=await Post.findByPk(req.params.postId);
-
-//   const post=postData.get({plain:true});
-//   console.log(post);
-
-//   res.render('editPost',{logged_in:req.session.logged_in,post});
-
-// });
+router.get("/delete/:postId", async (req, res) => {
 
 
-// router.get("/updatePost", async (req, res) => {
+ const username=req.session.username;
 
-//   console.log(req.session.title);
-//   res.render("updatepost",{ logged_in: req.session.logged_in,title:req.session.title,content:req.session.content});
+ console.log("Post id and User id",req.params.postId);
 
-// });
+ const postData=await Post.findByPk(req.params.postId);
+
+ const post=postData.get({plain:true});
+
+ console.log(post);
+
+ res.render('editPost',{logged_in:req.session.logged_in,post});
+
+ });
+
+
+  router.get("/updatePost", async (req, res) => {
+
+  console.log(req.session.title);
+  res.render("updatepost",{ logged_in: req.session.logged_in,title:req.session.title,content:req.session.content});
+
+  }); 
 
 
 

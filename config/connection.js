@@ -1,3 +1,4 @@
+/* Initializing 'connection' configurations */
 
 require('dotenv').config();
 const Sequelize = require('sequelize');

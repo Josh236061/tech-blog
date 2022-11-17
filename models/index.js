@@ -3,8 +3,9 @@ const User=require('./User');
 const Post=require('./Post');
 const Comment=require('./Comment');
 
-/* Relation between User and Post :One to Many relation,Where User has Many Posts and Post belongs to one user */
-//onDelete:'CASCADE' this has to be on belongs to for this to work
+/* User and Post: 1-to-Many relation */
+
+/* 'CASCADE' "belongs to" - verification */
 
 Post.belongsTo(User,{
     foreignKey:'user_id',
@@ -19,7 +20,7 @@ User.hasMany(Post,{
 
 
 
-/*Relation between Post and Comment:One to Many relation where Post has many Comment and comment belong to a post */
+/* Post and Comment: 1-to-Many relation */
 
 Comment.belongsTo(Post,{
     foreignKey:'post_id',
@@ -33,7 +34,7 @@ Post.hasMany(Comment,{
 
 
 
-/*Relation between Comment and User:One to Many relation where User has many Comment and comment belong to a user */
+/* Comment and User: 1-to-Many relation */
 
 Comment.belongsTo(User,{
     foreignKey:'user_id',

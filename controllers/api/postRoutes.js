@@ -2,7 +2,7 @@ const router=require('express').Router();
 
 const {User,Post,Comment}=require('../../models');
 
-//ROUTE FOR ADDING COMMENT
+/* Comment Additions - route */
 
 router.post('/addComment', async (req, res) => {
 
@@ -27,7 +27,7 @@ router.post('/addComment', async (req, res) => {
   });
 
 
-  //ROUTE FOR NEW POST
+  /* New Post - route */
   
   router.post('/newpost', async (req, res) => {
 
@@ -51,7 +51,7 @@ try {
 
 
   
-//UPDATE POST ROUTE
+/* Update Post - route */
   
 router.post("/edit", async (req, res) => {
 
@@ -71,7 +71,7 @@ router.post("/edit", async (req, res) => {
 });
 
 
-//DELETE
+/* Delete Post - route */
 
 router.delete("/delete/:postId", async (req, res) => {
 
@@ -89,10 +89,6 @@ router.delete("/delete/:postId", async (req, res) => {
     res.status(404).json({message:"Post Not Found !!!"});
   }
 });
-
-
-
-
 
 
   module.exports=router;

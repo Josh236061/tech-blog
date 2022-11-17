@@ -2,7 +2,7 @@
 const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
-//Uncomment once the route files are created
+
 const routes = require('./controllers');
 const session = require('express-session');
 const {User,Post,Comment}=require('./models');
@@ -15,7 +15,7 @@ const sequelize = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3002;
 
-// Create the Handlebars.js engine object
+/* Handlebars.js engine object creation */
 
 const hbs = exphbs.create({helpers});
 
@@ -31,7 +31,8 @@ const sess = {
 
 app.use(session(sess));
 
-// Inform Express.js which template engine we're using
+/* Express.js Verification */
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

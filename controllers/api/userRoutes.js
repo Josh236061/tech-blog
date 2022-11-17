@@ -3,9 +3,8 @@ const router = require("express").Router();
 
 const { User, Post, Comment } = require("../../models");
 
-//SIGNUP ROUTE
-
-/* Get username and password from form and create a new user in user table */
+//SignUp
+/* Username & Password */
 
 router.post("/signup", async (req, res) => {
   try {
@@ -22,11 +21,9 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-//LOGIN ROUTE
+//Login
 
-/* Get the user data from the table using the username
-Verify the password with existing one for the user
-If Valid,save the session with user id and loggin id and return userdata */
+/* User data : Username ; Password verification/user id and loggin id verification */
 
 router.post("/login", async (req, res) => {
   try {
@@ -42,10 +39,10 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    //Validate the password with saved in databse
+    //Password validation
     const validPassword = userData.checkPassword(req.body.password);
 
-    //If Password is not valid send failed response
+    //FAILED response if incorrect password is implemented
     if (!validPassword) {
       res
         .status(400)
@@ -69,13 +66,10 @@ router.post("/login", async (req, res) => {
   }
 });
 
+/* Logout */
 
-
-//LOGOUT ROUTE
-
-/*
-  Destroy the session for the user,if user is logged in
-  */
+/* Logged in user: DESTROY Session (LogOut) */
+  
 
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
