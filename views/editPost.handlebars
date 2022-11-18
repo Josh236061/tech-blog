@@ -1,0 +1,23 @@
+
+
+<div class="container" data-postId="{{post.id}}">
+    <form action="" id="update-post-form" class="px-2 py-2 d-flex flex-column">
+        <h6 class="p-2 bg-dark text-light">Update Post</h6>
+        <div class="form-group my-3 ">
+              <label for="post-title" class="my-2">Title</label>
+              <input type="text" class="form-control px-5" id="post-title" value={{post.title}}>
+        </div>
+        <div class="form-group my-4">
+              <label for="post-content" class="my-2">Content</label>
+              <textarea id="post-content" class="form-control" rows="4" cols="10">{{post.content}}</textarea>
+        </div>
+        <div class="form-group my-3 d-flex justify-content-center">
+            <button class="btn px-4 mx-2" id="update-btn">Update</button>
+            <button class="btn px-4" id="delete-btn">Delete</button>
+        </div>
+    </form>
+</div>
+{{#if logged_in}}
+<script src="/js/update.js"></script>
+<script src="/js/delete.js"></script>
+{{/if}}

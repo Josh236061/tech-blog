@@ -1,0 +1,22 @@
+
+<div class="container my-5 d-flex flex-column py-3 align-items-center" id="login-container">
+    <h6 class="my-3">LOGIN</h6>
+    <form class="container d-flex flex-column align-items-center" id="login-form">
+        <div class="form-group my-3 ">
+              <label for="username" class="my-2">Username</label>
+              <input type="text" class="form-control px-5" id="username" placeholder="Enter Username">
+        </div>
+        <div class="form-group my-4">
+              <label for="password" class="my-2">Password</label>
+              <input type="text" class="form-control px-5" id="password" placeholder="Enter Password">
+        </div>
+        <div class="form-group my-3">
+            <button class="btn px-4">Login</button>
+        </div>
+        <a href="/signup" id="signup-link">Not a registered user ? SignUp</a>
+        <p class="error-message py-3"></p>
+    </form>
+</div>
+{{#unless logged_in}}
+<script src="/js/login.js"></script>
+{{/unless}}

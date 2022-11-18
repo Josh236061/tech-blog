@@ -1,0 +1,24 @@
+
+<h4 class="m-0 my-1 p-2">My Dashboard</h4>
+ <div class="post-div-container" data-logged={{logged_in}}>
+      {{#each posts as |post|}}
+        <div class="post-div d-flex flex-column" data-postId={{post.id}}>
+          <a href="/post/{{post.id}}">
+          <div  class="d-flex justify-content-between align-items-center post-header">
+          <h6>{{post.title}}</h6>
+          <small class="align-self-end">Posted by {{post.username}} on {{post.formattedDate}}</small>
+          </div>
+          </a>
+          <p>{{post.content}}</p>
+          <div class="d-flex align-items-center py-2">
+          <a href="/edit/{{post.id}}" id="post-edit-link" class="px-2">Edit Post</a>
+          </div>
+        </div>  
+      {{/each}}
+ </div>
+ {{#if logged_in}}
+       
+    <button id="create-post-btn" class="btn">Create New Post</button>
+
+        <script src="/js/script.js"></script>
+ {{/if}}
