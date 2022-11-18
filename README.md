@@ -85,8 +85,7 @@ WHEN I am idle on the site for more than a set time
 
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 
-## Screenshot(s)
-
 ## URLs
 
 GitHub Repo URL: https://github.com/Josh236061/techblog
+Deployed URL: https://tech-blog-jmt.herokuapp.com/
