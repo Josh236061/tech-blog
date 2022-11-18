@@ -1,17 +1,17 @@
 [
     {
       "title":"Closure",
-      "content":"In JavaScript, a closure is a function that references variables in the outer scope from its inner scope. The closure preserves the outer scope inside its inner scope",
+      "content":" A function in JS that references variables in the outer scope from its inner scope.",
       "user_id":1
     },
     {
       "title": "Hoisting",
-      "content": "Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).",
+      "content": "Default behavior in JS for moving all declarations to the top of the current scope.",
       "user_id":2
   },
     {
       "title": "Promises",
-      "content": "A promise is an object that encapsulates the result of an asynchronous operation. A promise starts in the pending state and ends in either fulfilled state or rejected state.",
+      "content": "An object that encapsulates the result of an asynchronous operation.",
       "user_id":3
     }
   ]

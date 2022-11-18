@@ -1,14 +1,14 @@
 [
-    {"comment":"Great Info",
+    {"comment":"Great Information",
     "post_id":1,
     "user_id":3
    },
-   {"comment":"Thanks for the article",
+   {"comment":"Thank you for the post!",
     "post_id":2,
     "user_id":2
    },
    {
-    "comment":"Simple way of explaining the topic",
+    "comment":"Easy read-able to under the article seamlessly!",
     "post_id":2,
     "user_id":3
    }
